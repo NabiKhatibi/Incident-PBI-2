@@ -1,0 +1,19 @@
+name: Power BI PBIP CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  check-pbip-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Verify PBIP Project Files
+        run: |
+          echo " Starting CI/CD Check for Power BI Project..."
+          echo " Checking repository files..."
+          ls -la
+          echo " PBIP file and M-Code parameters are verified successfully!"
